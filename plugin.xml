@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="kz.linktower.tip"
+    version="0.0.1">
+
+    <name>Tip</name>
+    <description>Плагин вызывающий системный Toast</description>
+    <author>dmy9406@gmail.com</author>
+
+    <engines>
+        <engine name="cordova" version=">=3.6.0" />
+    </engines>
+
+    <js-module src="www/tip.js" name="tip">
+        <clobbers target="tip" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Tip">
+                <param name="android-package" value="kz.linktower.tip.Tip" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/Tip.java" target-dir="src/kz/linktower/tip" />
+    </platform>
+
+</plugin>
